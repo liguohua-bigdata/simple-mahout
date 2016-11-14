@@ -3,11 +3,11 @@
 Download and extract the 20news-bydate.tar.gz from the 20newsgroups dataset to the working directory.   
 1.下载数据集
 ```
-   wget http://101.96.10.65/people.csail.mit.edu/jrennie/20Newsgroups/20news-bydate.tar.gz
+wget http://101.96.10.65/people.csail.mit.edu/jrennie/20Newsgroups/20news-bydate.tar.gz
 ```
 2.解压数据集
 ```
-  tar -zxvf 20news-bydate.tar.gz
+tar -zxvf 20news-bydate.tar.gz
 ```
 3.上传数据集到HDFS
 ```
