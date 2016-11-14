@@ -88,7 +88,6 @@ ${MAHOUT_HOME}/bin/mahout split \
 •	-tr训练集     
 •	-te测试集
 •	-rp参数设定的是测试数据集占总数据集的百分比，以下代码设定为20%！   
-
 ```
 
 shell执行效果：
