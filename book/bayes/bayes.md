@@ -104,14 +104,14 @@ hadoo hdfs web执行效果：
 ![](images/Snip20161114_110.png)    
 
 
-4.训练分类器
+####五、训练分类器
 Train the classifier.  
-4.1开始训练  
+1.开始训练  
 这个过程将进行多次迭代，就想是进行多次训练来熟悉一种模型一样。等待时间比较长，需要一点耐心。。。  
 执行命令：
 ```
 ${MAHOUT_HOME}/bin/mahout trainnb \
--i /input/mahout/20news_all_rt/train-vectors \
+-i /input/mahout/20news_all_rt/train-vectors  -el  \
 -o /input/mahout/20news_all_mi/nbmodel \
 -li /input/mahout/20news_all_mi/labelindex \
 -ow \
@@ -125,14 +125,14 @@ hadoo yarn web执行效果：
 hadoo hdfs web执行效果：
 ![](images/Snip20161114_115.png)    
 
-4.2检验训练结果  
-A.查看训练出来的模型：
+2.检验训练结果  
+2.1.查看训练出来的模型：
 ```
 hadoop fs -ls  /input/mahout/20news_all_mi/nbmodel 
 ```
 ![](images/Snip20161114_120.png)   
 
-B. 查看生成的索引:   
+2.2. 查看生成的索引:   
 a.使用Hadoop命令
 ```
 hadoop fs -text /input/mahout/20news_all_mi/labelindex
@@ -145,7 +145,7 @@ ${MAHOUT_HOME}/bin/mahout seqdumper -i  /input/mahout/20news_all_mi/labelindex
 ![](images/Snip20161114_122.png)         
 
 
-####五、测试分类器
+####六、测试分类器
 Test the classifier.   
 执行命令：
 ```
@@ -170,7 +170,7 @@ ${MAHOUT_HOME}/bin/mahout seqdumper -i /input/mahout/20news_all_testing/part-m-0
 ```
 ![](images/Snip20161114_123.png)  
 
-####五、参考文献          
+####七、参考文献          
   
 1.贝叶斯算法参考链接
 ```
