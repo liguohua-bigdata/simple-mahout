@@ -1,6 +1,6 @@
 ##<<新闻分类示例>>
 ####一、下载数据集，并上传到hdfs  
-Download and extract the 20news-bydate.tar.gz from the 20newsgroups dataset to the working directory.
+Download and extract the 20news-bydate.tar.gz from the 20newsgroups dataset to the working directory.   
 1.下载数据集
 ```
    wget http://101.96.10.65/people.csail.mit.edu/jrennie/20Newsgroups/20news-bydate.tar.gz
@@ -31,7 +31,7 @@ Download and extract the 20news-bydate.tar.gz from the 20newsgroups dataset to t
 ![](images/Snip20161114_100.png)      
 
 ####二、将数据集转化为序列文件       
-Convert the full 20 newsgroups dataset into a < Text, Text > SequenceFile.
+Convert the full 20 newsgroups dataset into a < Text, Text > SequenceFile.   
 执行命令：
 ```
 ${MAHOUT_HOME}/bin/mahout seqdirectory \
@@ -48,7 +48,7 @@ hadoo hdfs web执行效果：
 
 
 ####三、将序列文件转化为向量
-Convert and preprocesses the dataset into a < Text, VectorWritable > SequenceFile containing term frequencies for each document.
+Convert and preprocesses the dataset into a < Text, VectorWritable > SequenceFile containing term frequencies for each document.   
 执行命令：
 ```
 ${MAHOUT_HOME}/bin/mahout seq2sparse \
@@ -127,9 +127,8 @@ hadoop fs -text /input/mahout/20news_all_mi/labelindex
 ![](images/Snip20161114_121.png)   
 
 
-
 ####五、测试分类器
-Test the classifier.
+Test the classifier.   
 执行命令：
 ```
 ${MAHOUT_HOME}/bin/mahout testnb \
