@@ -94,6 +94,7 @@ hadoo hdfs web执行效果：
 
 4.训练分类器
 Train the classifier.  
+4.1开始训练  
 这个过程将进行多次迭代，就想是进行多次训练来熟悉一种模型一样。等待时间比较长，需要一点耐心。。。  
 执行命令：
 ```
@@ -111,6 +112,21 @@ hadoo yarn web执行效果：
 ![](images/Snip20161114_114.png)    
 hadoo hdfs web执行效果：
 ![](images/Snip20161114_115.png)    
+
+4.2检验训练结果  
+A.查看训练出来的模型：
+```
+hadoop fs -ls  /input/mahout/20news_all_mi/nbmodel 
+```
+![](images/Snip20161114_120.png)   
+
+B. 查看生成的索引:
+```
+hadoop fs -text /input/mahout/20news_all_mi/labelindex
+```
+![](images/Snip20161114_121.png)   
+
+
 
 ####五、测试分类器
 Test the classifier.
