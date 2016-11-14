@@ -133,7 +133,18 @@ hadoo yarn web执行效果：
 hadoo hdfs web执行效果：
 ![](images/Snip20161114_118.png)    
 
+####五、参考文献          
+  
+1.贝叶斯算法参考链接
+```
+http://mahout.apache.org/users/classification/bayesian.html
+```
 
-----
+2.新闻分类参考链接
+```
+http://mahout.apache.org/users/classification/twenty-newsgroups.html
+```
+
+--------
 
 
