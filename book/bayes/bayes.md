@@ -124,11 +124,17 @@ hadoop fs -ls  /input/mahout/20news_all_mi/nbmodel
 ```
 ![](images/Snip20161114_120.png)   
 
-B. 查看生成的索引:
+B. 查看生成的索引:   
+a.使用Hadoop命令
 ```
 hadoop fs -text /input/mahout/20news_all_mi/labelindex
 ```
 ![](images/Snip20161114_121.png)   
+b.使用mahout命令
+```
+${MAHOUT_HOME}/bin/mahout seqdumper -i  /input/mahout/20news_all_mi/labelindex
+```
+![](images/Snip20161114_122.png)         
 
 
 ####五、测试分类器
