@@ -1,4 +1,4 @@
-##<<新闻分类示例>>
+##<<贝叶斯算法应用示例--新闻分类示例>>
 ####一、下载数据集，并上传到hdfs  
 Download and extract the 20news-bydate.tar.gz from the 20newsgroups dataset to the working directory.   
 1.下载数据集
