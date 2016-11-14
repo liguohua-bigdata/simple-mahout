@@ -76,9 +76,8 @@ ${MAHOUT_HOME}/bin/mahout split \
 -te /input/mahout/20news_all_rt/test-vectors \
 -xm sequential \
 -rp 20 \
--ow \
--seq 
-
+-seq \
+-ow 
 
 其中参数的意义如下：
 •	-tr训练集     
@@ -89,23 +88,21 @@ ${MAHOUT_HOME}/bin/mahout split \
 
 shell执行效果：
 ![](images/Snip20161114_109.png)    
-hadoo yarn web执行效果：
-![](images/Snip20161114_111.png)    
 hadoo hdfs web执行效果：
 ![](images/Snip20161114_110.png)    
 
 
 4.训练分类器
-Train the classifier.
+Train the classifier.  
+这个过程将进行多次迭代，就想是进行多次训练来熟悉一种模型一样。等待时间比较长，需要一点耐心。。。  
 执行命令：
 ```
-${MAHOUT_HOME}/bin/mahout trainnb  \
--i /input/mahout/20news_all_rt/train-vectors/ \
--el \
--o /input/mahout/20news_all_mi/nbmodel/ \
--li /input/mahout/20news_all_mi/labelindex/ \
+${MAHOUT_HOME}/bin/mahout trainnb \
+-i /input/mahout/20news_all_rt/train-vectors \
+-o /input/mahout/20news_all_mi/nbmodel \
+-li /input/mahout/20news_all_mi/labelindex \
 -ow \
--c 
+-c
 ```
 
 shell执行效果：
@@ -120,9 +117,9 @@ Test the classifier.
 执行命令：
 ```
 ${MAHOUT_HOME}/bin/mahout testnb \
--i /input/mahout/20news_all_rt/test-vectors/ \
--m /input/mahout/20news_all_mi/nbmodel/ \
--l /input/mahout/20news_all_mi/labelindex/ \
+-i /input/mahout/20news_all_rt/test-vectors \
+-m /input/mahout/20news_all_mi/nbmodel \
+-l /input/mahout/20news_all_mi/labelindex \
 -o /input/mahout/20news_all_testing \
 -ow \
 -c
