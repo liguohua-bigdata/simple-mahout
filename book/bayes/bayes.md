@@ -9,16 +9,21 @@ wget http://101.96.10.65/people.csail.mit.edu/jrennie/20Newsgroups/20news-bydate
 ```
 tar -zxvf 20news-bydate.tar.gz
 ```
-3.上传数据集到HDFS
-```
-0.精简数据集
-   删除一部分数据，不需要那么大的数据集
+
+3.精简数据集  
+删除一部分数据，不需要那么大的数据集。如果你想对全部数据进行计算，这一步就可以省略了。
+```   
+1.删除train部分的冗余数据
     cd 20news-bydate-train
     rm -rf rec* talk* sci* comp*
-
+    
+2.删除test部分的冗余数据
     cd ../20news-bydate-test
     rm -rf rec* talk* sci* comp*
-    
+```
+
+4.上传数据集到HDFS
+```    
 1.在hdfs上创建目录
     hadoop fs -mkdir  /input/mahout/20news_all
     
@@ -27,7 +32,7 @@ tar -zxvf 20news-bydate.tar.gz
     hadoop fs -put -p  ./20news-bydate-train/  /input/mahout/20news_all/
 ```
 
-4.HDFS执行效果
+5.HDFS执行效果
 ![](images/Snip20161114_100.png)      
 
 ####二、将数据集转化为序列文件       
