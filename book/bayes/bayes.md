@@ -1,5 +1,6 @@
 ##<<新闻分类示例>>
-####一、Download and extract the 20news-bydate.tar.gz from the 20newsgroups dataset to the working directory.
+####一、下载数据集，并上传到hdfs  
+Download and extract the 20news-bydate.tar.gz from the 20newsgroups dataset to the working directory.
 1.下载数据集
 ```
    wget http://101.96.10.65/people.csail.mit.edu/jrennie/20Newsgroups/20news-bydate.tar.gz
@@ -29,11 +30,13 @@
 4.HDFS执行效果
 ![](images/Snip20161114_100.png)      
 
-####二、Convert the full 20 newsgroups dataset into a < Text, Text > SequenceFile.
+####二、将数据集转化为序列文件       
+Convert the full 20 newsgroups dataset into a < Text, Text > SequenceFile.
 执行命令：
 ```
-cd /${MAHOUT_HOME}/bin
-./mahout seqdirectory -i /input/mahout/20news_all -o /input/mahout/20news_all_seq
+${MAHOUT_HOME}/bin/mahout seqdirectory \
+-i /input/mahout/20news_all \
+-o /input/mahout/20news_all_seq
 ```
 
 shell执行效果：
@@ -44,14 +47,13 @@ hadoo hdfs web执行效果：
 ![](images/Snip20161114_104.png)    
 
 
-####三、Convert and preprocesses the dataset into a < Text, VectorWritable > SequenceFile containing term frequencies for each document.
+####三、将序列文件转化为向量
+Convert and preprocesses the dataset into a < Text, VectorWritable > SequenceFile containing term frequencies for each document.
 执行命令：
 ```
-cd /${MAHOUT_HOME}/bin
-
-./mahout seq2sparse \
--i /input/mahout/20news_all_seq/ \
--o /input/mahout/20news_all_vec/ \
+${MAHOUT_HOME}/bin/mahout seq2sparse \
+-i /input/mahout/20news_all_seq \
+-o /input/mahout/20news_all_vec \
 -lnorm \
 -nv \
 -wt tfidf
@@ -64,19 +66,19 @@ hadoo yarn web执行效果：
 hadoo hdfs web执行效果：
 ![](images/Snip20161114_108.png)    
 
-####四、Split the preprocessed dataset into training and testing sets.  
+####四、将向量拆分为训练集和测验集
+Split the preprocessed dataset into training and testing sets.  
 执行命令：
 ```
-cd /${MAHOUT_HOME}/bin
-
-./mahout split \
--i /input/mahout/20news_all_vec/tfidf-vectors/ \
--tr /input/mahout/20news_all_rt/train-vectors/ \
--te /input/mahout/20news_all_rt/test-vectors/ \
+${MAHOUT_HOME}/bin/mahout split \
+-i /input/mahout/20news_all_vec/tfidf-vectors \
+-tr /input/mahout/20news_all_rt/train-vectors \
+-te /input/mahout/20news_all_rt/test-vectors \
+-xm sequential \
 -rp 20 \
 -ow \
--seq \
--xm sequential
+-seq 
+
 
 其中参数的意义如下：
 •	-tr训练集     
@@ -93,12 +95,11 @@ hadoo hdfs web执行效果：
 ![](images/Snip20161114_110.png)    
 
 
-4.Train the classifier.
+4.训练分类器
+Train the classifier.
 执行命令：
 ```
-cd /${MAHOUT_HOME}/bin
-
-./mahout trainnb  \
+${MAHOUT_HOME}/bin/mahout trainnb  \
 -i /input/mahout/20news_all_rt/train-vectors/ \
 -el \
 -o /input/mahout/20news_all_mi/nbmodel/ \
@@ -114,10 +115,11 @@ hadoo yarn web执行效果：
 hadoo hdfs web执行效果：
 ![](images/Snip20161114_115.png)    
 
-####五、Test the classifier.
+####五、测试分类器
+Test the classifier.
 执行命令：
 ```
-./mahout testnb \
+${MAHOUT_HOME}/bin/mahout testnb \
 -i /input/mahout/20news_all_rt/test-vectors/ \
 -m /input/mahout/20news_all_mi/nbmodel/ \
 -l /input/mahout/20news_all_mi/labelindex/ \
