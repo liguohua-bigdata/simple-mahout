@@ -54,9 +54,9 @@ Convert and preprocesses the dataset into a < Text, VectorWritable > SequenceFil
 ${MAHOUT_HOME}/bin/mahout seq2sparse \
 -i /input/mahout/20news_all_seq \
 -o /input/mahout/20news_all_vec \
+-wt tfidf \
 -lnorm \
--nv \
--wt tfidf
+-nv 
 ```
 
 shell执行效果：

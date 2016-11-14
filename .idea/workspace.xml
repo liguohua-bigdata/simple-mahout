@@ -51,8 +51,8 @@
         <entry file="file://$PROJECT_DIR$/book/bayes/bayes.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="195">
-                <caret line="130" column="23" selection-start-line="130" selection-start-column="23" selection-end-line="130" selection-end-column="23" />
+              <first_editor relative-caret-position="180">
+                <caret line="58" column="4" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -720,7 +720,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1479110917214</updated>
-      <workItem from="1479110918813" duration="2119000" />
+      <workItem from="1479110918813" duration="2177000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1479111082387</created>
@@ -757,11 +757,18 @@
       <option name="project" value="LOCAL" />
       <updated>1479113099120</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="first commit">
+      <created>1479113167059</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1479113167059</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2119000" />
+    <option name="totallyTimeSpent" value="2177000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -886,8 +893,8 @@
     <entry file="file://$PROJECT_DIR$/book/bayes/bayes.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="195">
-            <caret line="130" column="23" selection-start-line="130" selection-start-column="23" selection-end-line="130" selection-end-column="23" />
+          <first_editor relative-caret-position="180">
+            <caret line="58" column="4" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
             <folding />
           </first_editor>
           <second_editor />
