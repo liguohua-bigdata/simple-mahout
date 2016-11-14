@@ -49,8 +49,16 @@ shell执行效果：
 hadoo yarn web执行效果：
 ![](images/Snip20161114_101.png)    
 hadoo hdfs web执行效果：
-![](images/Snip20161114_104.png)    
+![](images/Snip20161114_104.png)   
 
+查看序列文件的内容  
+```
+${MAHOUT_HOME}/bin/mahout seqdumper -i /input/mahout/20news_all_seq/part-m-00000 
+```
+![](images/Snip20161114_124.png)
+![](images/Snip20161114_125.png)
+![](images/Snip20161114_126.png)
+![](images/Snip20161114_127.png)   
 
 ####三、将序列文件转化为向量
 Convert and preprocesses the dataset into a < Text, VectorWritable > SequenceFile containing term frequencies for each document.   
@@ -156,6 +164,11 @@ hadoo yarn web执行效果：
 ![](images/Snip20161114_117.png)    
 hadoo hdfs web执行效果：
 ![](images/Snip20161114_118.png)    
+查看结果文件内容效果：
+```
+${MAHOUT_HOME}/bin/mahout seqdumper -i /input/mahout/20news_all_testing/part-m-00000
+```
+![](images/Snip20161114_123.png)  
 
 ####五、参考文献          
   
