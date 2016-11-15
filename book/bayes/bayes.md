@@ -77,7 +77,7 @@ shell执行效果：
 hadoo yarn web执行效果：
 ![](images/Snip20161114_106.png)    
 hadoo hdfs web执行效果：
-![](images/Snip20161114_108.png)    
+![](images/Snip20161115_2.png)    
 
 ####四、将向量拆分为训练集和测验集
 Split the preprocessed dataset into training and testing sets.  
